@@ -15,3 +15,21 @@ $(".create-form").on("submit", function (event) {
         }
     );
 });
+
+$(".devouredBurger").on("click", function (event) {
+    event.preventDefault();
+
+    const devouredBurger = {
+        id: $(this).attr("data-id")
+    };
+    console.log(devouredBurger);
+
+    $.ajax("/api/burgers/" + devouredBurger.id, {
+        type: "PUT",
+        data: devouredBurger
+    }).then(function () {
+        console.log("Burger successfully created!");
+        location.reload();
+    }
+);
+});
