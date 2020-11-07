@@ -13,6 +13,7 @@ const burger = {
             cb(res);
         });
     },
+    
     update: function (cols, vals, id, cb) {
         orm.updateOne("burgers", cols, vals, id, function (res) {
             cb(res);

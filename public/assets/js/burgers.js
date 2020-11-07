@@ -10,7 +10,7 @@ $(".create-form").on("submit", function (event) {
             type: "POST",
             data: newBurger
         }).then(function () {
-            console.log("New burger successfully created!");
+            console.log("Burger successfully created!");
             location.reload();
         }
     );

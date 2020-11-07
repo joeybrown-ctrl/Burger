@@ -13,10 +13,11 @@ const orm = {
         });
     },
 
-
+    //fix these queries with ?? to staop any chance of SQL injection
     // insertOne();
     insertOne: function (table, cols, vals, cb) {
-        const queryString = `INSERT INTO ${table} (${cols}) VALUES (${vals})`;
+        console.log(cols);
+        const queryString = `INSERT INTO ${table} (${cols}) VALUES ("${vals}")`;
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
