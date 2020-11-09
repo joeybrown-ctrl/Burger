@@ -1,65 +1,64 @@
 <div class="container">
-    <div class="jumbotron">
-        <div class="row justify-content-center">
-                <div class="col text-center">
-                <img src="../public/assets/happy-burger.png" alt="Happy burger">
-                <hr class="my-4">
-                <h1>Devour-the-Burger!</h1>
-            </div>
+    {{!-- <div class="jumbotron"> --}}
+    <div class="row justify-content-center" style="padding-top: 50px; padding-bottom: 50px;">
+        <div class="col text-center">
+            <h1>DEVOUR-THE-BURGER</h1>
+            <p>An app that lets YOU create and add burgers to the menu, and then devour them!</p>
+            <img class="img.animated-gif" src="https://media.giphy.com/media/TiUiqGzH4E1A0pjmAi/giphy.gif" alt="Happy burger">
+            <hr class="my-4">
         </div>
+    </div>
+    {{!-- </div> --}}
+
+    <div class="row" style="padding-top: 10px; padding-bottom: 10px;">
+        <div class="col text-center">
+
+            <h3>Menu</h3>
+            <ul class="list-group list-group-flush">
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li class="list-group-item">
+                    {{burger_name}}
+                    <button type="submit" class="devouredBurger btn btn-danger" data-id="{{id}}">Devour!</button>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+
+
+        </div>
+
+        <div class="col text-center">
+
+            <h3>Devoured Burgers</h3>
+            <ul class="list-group list-group-flush">
+                {{#each burgers}}
+                {{#if devoured}}
+                <li class="list-group-item">
+                    {{burger_name}}
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+
+        </div>
+
     </div>
 
     <hr>
 
-    <div class="row">
+    <div class="row" style="padding-top: 10px; padding-bottom: 50px;">
         <div class="col text-center">
-            <div class="card" style="width: 18rem;">
-                <h3>Menu</h3>
-                <ul class="list-group list-group-flush">
-                    {{#each burgers}}
-                    {{#unless devoured}}
-                    <li class="list-group-item list-group-item-success">
-                        {{burger_name}}
-                        <button type="submit" class="devouredBurger" data-id="{{id}}">Devour Burger</button>
-                    </li>
-                    {{/unless}}
-                    {{/each}}
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="text-center">
-            <div class="card" style="width: 18rem;">
-                <h3>Devoured Burgers</h3>
-                <ul class="list-group list-group-flush">
-                    {{#each burgers}}
-                    {{#if devoured}}
-                    <li class="list-group-item list-group-item-danger">
-                        {{burger_name}}
-                    </li>
-                    {{/if}}
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
-
-    </div>
-
-    <hr>
-
-    <div class="row">
-        <div class="col text-center">
-            <h3>Add a Burger</h3>
+            {{!-- <h3>Add a Burger to the Menu</h3> --}}
 
             <form class="create-form">
 
                 <div class="form-group">
-                    <label for="burgerName">Burger Name:</label>
+                    <label for="burgerName">Add a burger to the menu</label>
                     <input type="taxt" id="burgerName" name="name">
                 </div>
 
-                <button type="submit">Create Burger</button>
+                <button type="submit" class="btn btn-primary">Create</button>
 
 
             </form>
@@ -67,5 +66,12 @@
     </div>
 
 </div>
+<footer class="page-footer bg-light">
+    <div class="row">
+        <div class="col text-center">
+            <p>&copy; 2020 Joey Brown. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
 {{!-- put the other form group in here from the cats activity --}}
