@@ -1,42 +1,71 @@
-<h1>Burgers!</h1>
-
-<h2>Burgers yet to be devoured</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <li>
-        {{burger_name}}
-        <button type="submit" class="devouredBurger" data-id="{{id}}">Devour Burger</button>
-    </li>
-    {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Devoured Burgers</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li>
-        {{burger_name}}
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="burgerName">Burger Name:</label>
-        <input type="taxt" id="burgerName" name="name">
+<div class="container">
+    <div class="jumbotron">
+        <div class="row justify-content-center">
+                <div class="col text-center">
+                <img src="../public/assets/happy-burger.png" alt="Happy burger">
+                <hr class="my-4">
+                <h1>Devour-the-Burger!</h1>
+            </div>
+        </div>
     </div>
 
-    <button type="submit">Create Burger</button>
+    <hr>
 
-    
-</form>
+    <div class="row">
+        <div class="col text-center">
+            <div class="card" style="width: 18rem;">
+                <h3>Menu</h3>
+                <ul class="list-group list-group-flush">
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li class="list-group-item list-group-item-success">
+                        {{burger_name}}
+                        <button type="submit" class="devouredBurger" data-id="{{id}}">Devour Burger</button>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="text-center">
+            <div class="card" style="width: 18rem;">
+                <h3>Devoured Burgers</h3>
+                <ul class="list-group list-group-flush">
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li class="list-group-item list-group-item-danger">
+                        {{burger_name}}
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col text-center">
+            <h3>Add a Burger</h3>
+
+            <form class="create-form">
+
+                <div class="form-group">
+                    <label for="burgerName">Burger Name:</label>
+                    <input type="taxt" id="burgerName" name="name">
+                </div>
+
+                <button type="submit">Create Burger</button>
+
+
+            </form>
+        </div>
+    </div>
+
+</div>
 
 {{!-- put the other form group in here from the cats activity --}}
