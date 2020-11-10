@@ -2,7 +2,7 @@
 
   ![license](https://img.shields.io/badge/License-MIT-blue.svg)
 
-   [For deployed version, click me](https://note-taker-joeybrown-ctrl.herokuapp.com/)
+   [For deployed version, click me](https://git.heroku.com/burger-logger-joeybrown-ctrl.git)
 
 
   ## Table of Contents
