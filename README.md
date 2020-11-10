@@ -2,6 +2,8 @@
 
   ![license](https://img.shields.io/badge/License-MIT-blue.svg)
 
+   [For deployed version, click me](https://note-taker-joeybrown-ctrl.herokuapp.com/)
+
 
   ## Table of Contents
 
@@ -23,7 +25,7 @@ A burger logger app built with MySQL, Node, Express, Handlebars and a homemade O
 The user can enter a the names of burgers they would like to eat, and this is displayed on the left side of the page under "Menu". The user can then hit the "Devour" button, and the burger will appear under "Devoured" on the right side of the page. The app stores every burger, both newly created or already devoured, in a database stored on JawsDB.
 
   ## Usage 
-Check out the deployed version here! 
+Check out the deployed version [here!](https://git.heroku.com/burger-logger-joeybrown-ctrl.git)
 
   ## Questions 
   
