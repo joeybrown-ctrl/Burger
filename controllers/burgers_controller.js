@@ -1,8 +1,9 @@
+//Pulls in Express and models, and sets up Router
 const express = require("express");
 const router = express.Router();
-
 const burger = require("../models/burger.js");
 
+//Get route (read/selects all)
 router.get("/", function (req, res) {
     burger.all(function (data) {
         const hbsObject = {
@@ -13,6 +14,7 @@ router.get("/", function (req, res) {
     });
 });
 
+//Post route (creates)
 router.post("/api/burgers", function (req, res) {
     burger.create(["burger_name"], [req.body.name], function (result) {
         // Send back the ID of the new quote
@@ -20,11 +22,10 @@ router.post("/api/burgers", function (req, res) {
     });
 });
 
+//Put route (updates)
 router.put("/api/burgers/:id", function (req, res) {
     const condition = "id = " + req.params.id;
-
     console.log("condition", condition);
-
     burger.update(
         "devoured", 1, req.params.id
         , function (result) {
@@ -35,7 +36,7 @@ router.put("/api/burgers/:id", function (req, res) {
                 res.status(200).end();
             }
         });
-
 });
 
+//Exports router for Models to use
 module.exports = router;

@@ -1,24 +1,24 @@
+//jQuery functionality for creating a new burger
 $(".create-form").on("submit", function (event) {
-        event.preventDefault();
+    event.preventDefault();
+    const newBurger = {
+        name: $("#burgerName").val().trim()
+    };
+    console.log(newBurger);
 
-        const newBurger = {
-            name: $("#burgerName").val().trim()
-        };
-        console.log(newBurger);
-
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: newBurger
-        }).then(function () {
-            console.log("Burger successfully created!");
-            location.reload();
-        }
+    $.ajax("/api/burgers", {
+        type: "POST",
+        data: newBurger
+    }).then(function () {
+        console.log("Burger successfully created!");
+        location.reload();
+    }
     );
 });
 
+//jQuery functionality for devoured buttons
 $(".devouredBurger").on("click", function (event) {
     event.preventDefault();
-
     const devouredBurger = {
         id: $(this).attr("data-id")
     };
@@ -31,5 +31,5 @@ $(".devouredBurger").on("click", function (event) {
         console.log("Burger successfully created!");
         location.reload();
     }
-);
+    );
 });
