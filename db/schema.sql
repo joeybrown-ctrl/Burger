@@ -1,3 +1,4 @@
+-- Creates database and table
 DROP DATABASE IF EXISTS low0t9mpmy1vclvh;
 CREATE DATABASE low0t9mpmy1vclvh;
 USE low0t9mpmy1vclvh;
