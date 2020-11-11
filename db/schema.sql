@@ -1,11 +1,11 @@
 -- Creates database and table
-DROP DATABASE IF EXISTS low0t9mpmy1vclvh;
-CREATE DATABASE low0t9mpmy1vclvh;
-USE low0t9mpmy1vclvh;
+DROP DATABASE IF EXISTS burger_db;
+CREATE DATABASE burger_db;
+USE burger_db;
 
 CREATE TABLE burgers (
     id INT NOT NULL AUTO_INCREMENT,
-    burger_name VARCHAR(100),
+    burger_name VARCHAR(150),
     devoured BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 );
